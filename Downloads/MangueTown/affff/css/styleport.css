@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(52, 50, 50);
+    background-image: url(/images/fundo.png);
+}
+
+.menu-container {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+}
+
+.main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color: white;
+}
+
+.menu-buttons li {
+    margin: 0 5px;
+    padding: 0px 1px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all .2s ease;
+    color: white;
+}
+
+.menu-buttons a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    padding: 15px;
+}
+
+.main-menu li:hover {
+    background-color: #000000;
+}
+
+.main-menu li:hover a {
+    color: #fff; 
+}
+
+.menu-buttons {
+    overflow: hidden;
+    max-width: 100%;
+    border-bottom: none;
+    color: white;
+}
+
+.imagem {
+    border: #ffffff solid 5px;
+}
+
+
