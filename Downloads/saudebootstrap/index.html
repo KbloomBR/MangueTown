@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoração de Saúde</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-secondary">
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg">
+        <div class="card-header bg-success text-white text-center font-weight-bold h4">MONITORE JÁ SUA SAÚDE</div>
+        <div class="card-body">
+          <form id="saude-form">
+            <h5 class="font-weight-bold text-center mb-4">INSIRA SEUS DADOS</h5>
+
+            <div class="font-weight-bold text-center form-group">
+              <label for="calorias">Calorias ingeridas no dia:</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="cal-icon">🍽️</span>
+                </div>
+                <input type="number" id="calorias" class="form-control" placeholder="Ex: 2500" aria-describedby="cal-icon">
+              </div>
+            </div>
+
+            <div class="font-weight-bold text-center form-group">
+              <label for="sono">Horas de sono:</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="sleep-icon">😴</span>
+                </div>
+                <input type="number" id="sono" class="form-control" placeholder="Ex: 8" aria-describedby="sleep-icon">
+              </div>
+            </div>
+
+            <div class="font-weight-bold text-center form-group">
+              <label for="exercicio">Minutos de exercício:</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="exercise-icon">🏋️‍♂️</span>
+                </div>
+                <input type="number" id="exercicio" class="form-control" placeholder="Ex: 45" aria-describedby="exercise-icon">
+              </div>
+            </div>
+
+            <div class="font-weight-bold text-center form-group">
+              <label for="objetivo">Objetivo:</label>
+              <select id="objetivo" class="form-control">
+                <option value="perder peso">Perder peso</option>
+                <option value="ganhar peso">Ganhar peso</option>
+              </select>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <button id="enviar" class="font-weight-bold btn btn-success btn-lg">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8 mt-4">
+      <div class="card shadow-lg">
+        <div class="card-header bg-info text-white text-center font-weight-bold h4">RESULTADOS</div>
+        <div class="card-body">
+          <textarea id="dados-texto" class="form-control mb-3" rows="5" readonly placeholder="Seus dados aparecerão aqui..."></textarea>
+              <button id="calcular" class="font-weight-bold btn btn-info btn-lg">Calcular</button>
+          <ul id="dados" class="list-group"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-center mt-4">
+  <div class="col-md-8">
+    <div class="card shadow-lg">
+      <div class="card-header bg-warning text-white text-center font-weight-bold h4">HISTÓRICO</div>
+      <div class="card-body">
+        <ul id="historico" class="list-group mb-3"></ul>
+        <button id="gerar-pdf" class="font-weight-bold btn btn-warning btn-lg">Gerar PDF</button>
+        <div class="mt-4">
+        <canvas id="graficoProgresso"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+
+</html>

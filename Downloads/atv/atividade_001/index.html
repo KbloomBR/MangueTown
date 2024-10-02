@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Fatorial com Passos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Fonte padrão para o corpo */
+        }
+        h1 {
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Muda a fonte do título */
+        }
+        p, input, button {
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Muda a fonte dos parágrafos, campo de entrada e botão */
+        }
+    </style>
+    <script>
+        function calcularFatorial() {
+            var inputNumero = document.getElementById("numero");
+            var resultado = document.getElementById("resultado");
+            var passos = document.getElementById("passos");
+            var numero = parseInt(inputNumero.value);
+
+            if (isNaN(numero) || numero < 1 || numero > 21) {
+                resultado.textContent = "Por favor, digite um número válido entre 1 e 21.";
+                passos.innerHTML = ""; // Limpar os passos anteriores se houver erro
+            } else {
+                var fatorial = 1;
+                var passosTexto = "Passos:<br>";
+                for (var i = 2; i <= numero; i++) {
+                    fatorial *= i;
+                    passosTexto += i + " × ";
+                }
+                passosTexto = passosTexto.slice(0, -2); // Remover o último " × "
+                passosTexto += " = " + fatorial + ".";
+                
+                resultado.textContent = "O fatorial de " + numero + " é " + fatorial + ".";
+                passos.innerHTML = passosTexto;
+            }
+        }
+
+        function verificarEnter(event) {
+            if (event.key === "Enter") {
+                calcularFatorial();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var inputNumero = document.getElementById("numero");
+            inputNumero.addEventListener("keydown", verificarEnter);
+        });
+    </script>
+</head>
+<body>
+    <h1>Me dê um número entre 1 - 21 que te darei o fatorial dele</h1>
+    <input type="text" id="numero" placeholder="Digite o número">
+    <button onclick="calcularFatorial()">Calcular</button>
+    <p id="resultado"></p>
+    <p id="passos"></p>
+</body>
+</html>
